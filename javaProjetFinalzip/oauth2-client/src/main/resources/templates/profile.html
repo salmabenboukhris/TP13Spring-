@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil utilisateur</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 350px;
+            margin: 80px auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        img {
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 4px solid #667eea;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ff4b5c;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e63e50;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>👤 Profil utilisateur</h2>
+
+    <img th:if="${picture != null}" th:src="${picture}" width="120" alt="photo">
+
+    <p><strong>Nom :</strong></p>
+    <p th:text="${name}"></p>
+
+    <p><strong>Email :</strong></p>
+    <p th:text="${email}"></p>
+
+    <a href="/logout" class="btn">Se déconnecter</a>
+
+</div>
+
+</body>
+</html>
